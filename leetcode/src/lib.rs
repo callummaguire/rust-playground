@@ -1,6 +1,7 @@
 mod rings_and_rods;
 
 mod is_isomorphic;
+mod binary_search;
 
 #[cfg(test)]
 mod tests {
@@ -30,6 +31,18 @@ mod tests {
     fn is_isomorphic_return_false() {
       let value = is_isomorphic::is_isomorphic("foo".to_string(),"bar".to_string());
       assert_eq!(value, false)
+    }
+
+    #[test]
+    fn binary_search_return_index() {
+      let value = binary_search::search(vec![-1,0,3,4,5,9,12], 3);
+      assert_eq!(value, 2)
+    }
+    
+    #[test]
+    fn binary_search_return_index_not_found() {
+      let value = binary_search::search(vec![-1,0,3,4,5,9,12], 20);
+      assert_eq!(value, -1)
     }
 }
 
