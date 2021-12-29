@@ -3,6 +3,8 @@ mod rings_and_rods;
 mod is_isomorphic;
 mod binary_search;
 
+mod count_matches;
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -43,6 +45,10 @@ mod tests {
     fn binary_search_return_index_not_found() {
       let value = binary_search::search(vec![-1,0,3,4,5,9,12], 20);
       assert_eq!(value, -1)
+    }
+
+    fn count_matches_good_path() {
+      assert_eq!(count_matches::count_matches(vec![vec!["phone".to_string(), "blue".to_string(), "pixel".to_string()]], "type".to_string(), "phone".to_string()), 1)
     }
 }
 
